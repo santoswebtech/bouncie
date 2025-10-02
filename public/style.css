@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
-  background-color: #fdf7f2; /* soft cream */
+  background-color: #fffbe5; /* soft cream */
   color: #4a4a4a;
 }
 
@@ -89,7 +89,7 @@ section {
 
 .card {
   background: #fff;
-  border-radius: 20px;
+  border-radius: 25px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 25px;
   width: 280px;
