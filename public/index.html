@@ -1,296 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bounce Kiddie – Play & Party</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: #fffdf9;
-      color: #333;
-    }
-    h1, h2, h3 {
-      font-family: "Fredoka One", cursive;
-      margin-bottom: 0.5em;
-    }
-    p {
-      line-height: 1.6;
-    }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    :root {
-      --mint: #aaf0d1;
-      --blush: #ffc0cb;
-      --blue: #add8e6;
-      --lavender: #e6e6fa;
-      --cream: #fffdf9;
-    }
-    /* Hero */
-    .hero {
-      position: relative;
-      background: linear-gradient(135deg, var(--mint), var(--blush), var(--blue), var(--lavender));
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 90%;
-      max-width: 1500px;
-      z-index: 2;
-    }
-    .hero-left, .hero-right {
-      flex: 1;
-      padding: 20px;
-    }
-    .hero-right h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-    .hero-right p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      color: #444;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: 1;
-    }
-    .bubble {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background: rgba(255,255,255,0.4);
-      border-radius: 50%;
-      animation: float 12s infinite linear;
-    }
-    @keyframes float {
-      0%   { transform: translateY(0) scale(1);}
-      50%  { transform: translateY(-60px) scale(1.2);}
-      100% { transform: translateY(0) scale(1);}
-    }
-    .animated-logo {
-      width: 600px;
-      height: 600px;
-      border-radius: 56%;
-      animation: bob 4s ease-in-out infinite;
-    }
-    @keyframes bob {
-      0%, 100% { transform: translateY(0);}
-      50%      { transform: translateY(-12px);}
-    }
-    .hero-buttons button, .cta-btn {
-      transition: transform 0.3s ease;
-      background: white;
-      border: none;
-      border-radius: 50px;
-      padding: 15px 30px;
-      margin: 10px;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-    }
-    .cta-btn {
-      background-color: rgb(158 115 159);
-      color: white;
-    }
-    .hero-buttons button:hover, .cta-btn:hover {
-      transform: scale(1.1) rotate(-2deg);
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    .card img {
-      max-width: 100%;
-      border-radius: 15px;
-      margin-bottom: 15px;
-    }
-    .booking-form {
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .booking-form input, .booking-form select, .booking-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    .booking-form button {
-      background: var(--blue);
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .contact {
-      background: var(--lavender);
-    }
-    .socialLink {
-    font-size: 2rem;
-    text-decoration: none;
-    color: rgb(164 87 165);
-    padding: 5px;
-    }
-    .socialLink:hover {
-        color: rgb(232 159 233);
-    }
-    @media (max-width: 768px) {
-      .hero {
-        padding-top: 30rem;
-        padding-bottom: 30rem;
-      }
-      .hero-content {
-        flex-direction: column;
-      }
-      .animated-logo {
-        width: 60vw;
-        height: 60vw;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bounce Kiddie - Play & Party Rentals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-
-<header class="hero">
-  <div class="hero-overlay">
-    <div class="bubble" style="top:20%; left:10%; animation-delay:0s;"></div>
-    <div class="bubble" style="top:40%; left:80%; animation-delay:2s;"></div>
-    <div class="bubble" style="top:70%; left:25%; animation-delay:4s;"></div>
-    <div class="bubble" style="top:85%; left:60%; animation-delay:6s;"></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-left">
-      <img src="./assets/bounceLogo.png" alt="Bounce Kiddie Logo" class="logo animated-logo">
-    </div>
-    <div class="hero-right">
-      <h1>Whimsical Fun for Every Party 🎉</h1>
-      <p>Built by parents. Approved by kids.</p>
-      <div class="hero-buttons">
-        <button onclick="document.getElementById('bounce').scrollIntoView({behavior:'smooth'})">🎈 Bounce Kiddie</button>
-        <button onclick="document.getElementById('soft').scrollIntoView({behavior:'smooth'})">🌸 Soft Kiddie</button>
-      </div>
-      <button class="cta-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Your Party</button>
-    </div>
-  </div>
-</header>
-
-<section id="bounce">
-  <div class="container">
-    <h2>🎈 Bounce Kiddie</h2>
-    <p>Our colorful bounce houses bring endless fun to kids of all ages.</p>
-    <div class="cards">
-      <div class="card"><img src="images/bounce1.jpg"><h3>Small Bounce House</h3><p>Perfect for toddlers. Ages 2–5.</p><p><strong>$120 / 4 hrs</strong></p></div>
-      <div class="card"><img src="images/bounce2.jpg"><h3>Medium Bounce House</h3><p>Great for birthday parties. Ages 3–8.</p><p><strong>$160 / 4 hrs</strong></p></div>
-      <div class="card"><img src="images/bounce3.jpg"><h3>Large Bounce House</h3><p>Big fun for larger groups. Ages 4–12.</p><p><strong>$200 / 4 hrs</strong></p></div>
-    </div>
-  </div>
-</section>
-
-<section id="soft" style="background: var(--mint);">
-  <div class="container">
-    <h2>🌸 Soft Kiddie</h2>
-    <p>Safe, soft, and whimsical play areas for toddlers.</p>
-    <div class="cards">
-      <div class="card"><img src="images/soft1.jpg"><h3>Foam Play Set</h3><p>Perfect for toddlers 1–3 yrs.</p><p><strong>$100 / 4 hrs</strong></p></div>
-      <div class="card"><img src="images/soft2.jpg"><h3>Ball Pit</h3><p>Endless giggles for 1–5 yrs.</p><p><strong>$120 / 4 hrs</strong></p></div>
-      <div class="card"><img src="images/soft3.jpg"><h3>Foam Climbers</h3><p>Encourage exploration and fun.</p><p><strong>$140 / 4 hrs</strong></p></div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <h2>About Us</h2>
-    <p>Our mission: Safe, stylish, family-friendly fun. As parents of four kids, we know how important safe, clean, and fun play is.</p>
-  </div>
-</section>
-
-<section id="booking" style="background: var(--blue);">
-  <div class="container">
-    <h2>Book Your Party</h2>
-    <form class="booking-form">
-      <label for="date">Event Date</label>
-      <input type="date" id="date" required>
-      <label for="package">Choose a Package</label>
-      <select id="package"><option>Bounce Kiddie</option><option>Soft Kiddie</option><option>Combo</option></select>
-      <label for="location">Event Location</label>
-      <input type="text" id="location" placeholder="Enter address" required>
-      <label for="notes">Additional Notes</label>
-      <textarea id="notes" rows="4"></textarea>
-      <button type="submit">Get Quote</button>
-    </form>
-  </div>
-</section>
-
-<section id="safety">
-  <div class="container">
-    <h2>Safety & FAQ</h2>
-    <p><strong>Safety:</strong> All equipment complies with NJ regulations.</p>
-    <p><strong>Cleaning:</strong> We sanitize everything before and after each event.</p>
-    <p><strong>Weather:</strong> Cancellations due to weather are fully refundable or reschedulable.</p>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Contact Us</h2>
-    <form target="_blank" action="" method="POST" style="width: 90%; max-width: 600px; margin: 0 auto;">
-            <div class="mb-3 row">
-              <div class="col-6">
-                <label for="name" class="form-label">Your Name</label>
-                <input type="name" name="name" class="form-control" id="name" required="">
-              </div>
-              <div class="col-6">
-                <label for="phone" class="form-label">Phone #</label>
-                <input type="phone" name="phone" class="form-control" id="phone" required="">
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" name="email" class="form-control" id="email" required="">
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea name="message" id="message" style="height: 150px; width: 100%; border: 1px solid #ced4da;"></textarea>
-            </div>
-            <button type="submit" class="btn btn-secondary" disabled>Submit</button>
-          </form>
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="./assets/bounceLogo.png" alt="Bounce Kiddie Logo" class="logo">
     <div id="socials">
-      <a class="socialLink" target="_blank" href="https://www.tiktok.com/@crys_nita?_t=8sbJp1UK8i2&_r=1"><i class="fa-brands fa-tiktok"></i></a>
-      <a class="socialLink" target="_blank" href="https://www.instagram.com/crys_nita/profilecard/?igsh=bzVvODRoenkxbXJ6"><i class="fa-brands fa-instagram"></i></a>
-      <a class="socialLink" target="_blank" href="https://www.facebook.com/profile.php?id=61564444511292&rdid=WOYgvssO0mk40Hxn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1F64NBEyJk%2F#"><i class="fa-brands fa-facebook"></i></a>
-      <a class="socialLink" target="_blank" href="https://youtube.com/@crysnita1?si=FumDA4QWSC9TqDx9"><i class="fa-brands fa-youtube"></i></a>
+      <a class="socialLink" target="_blank" href="#"><i class="fa-brands fa-tiktok"></i></a>
+      <a class="socialLink" target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a class="socialLink" target="_blank" href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a class="socialLink" target="_blank" href="#"><i class="fa-brands fa-youtube"></i></a>
     </div>
-  </div>
-</section>
+    <h1>Bounce Kiddie</h1>
+    <p>Built by parents. Approved by kids.</p>
+    <div class="hero-buttons">
+      <button>Bounce Houses</button>
+      <button>Soft Play</button>
+    </div>
+  </header>
 
+  <!-- Rentals Section -->
+  <section id="bouncie">
+    <h2>Bouncie Kiddie</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="./assets/pinkBounceHouse.png" alt="Bounce House">
+        <h3>Bounce Kiddie</h3>
+        <button>See Packages</button>
+      </div>
+      <div class="card">
+        <img src="./assets/pinkBounceHouse.png" alt="Bounce House">
+        <h3>Bounce Kiddie</h3>
+        <button>See Packages</button>
+      </div>
+      <div class="card">
+        <img src="./assets/pinkBounceHouse.png" alt="Bounce House">
+        <h3>Bounce Kiddie</h3>
+        <button>See Packages</button>
+      </div>
+    </div>
+  </section>
+  <section id="soft">
+    <h2>Soft Kiddie</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="./assets/pinkBallPit.png" alt="Soft Play">
+        <h3>Soft Kiddie</h3>
+        <button>See Packages</button>
+      </div>
+      <div class="card">
+        <img src="./assets/pinkBallPit.png" alt="Soft Play">
+        <h3>Soft Kiddie</h3>
+        <button>See Packages</button>
+      </div>
+      <div class="card">
+        <img src="./assets/pinkBallPit.png" alt="Soft Play">
+        <h3>Soft Kiddie</h3>
+        <button>See Packages</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why">
+    <h2>Why Choose Us</h2>
+    <div class="features">
+      <div class="feature">
+        <i>🧼</i>
+        <p>Safe & Clean</p>
+      </div>
+      <div class="feature">
+        <i>✅</i>
+        <p>NJ Safety Compliant</p>
+      </div>
+      <div class="feature">
+        <i>🚚</i>
+        <p>Stress-Free Setup & Pickup</p>
+      </div>
+      <div class="feature">
+        <i>❤️</i>
+        <p>Made for Kids, Loved by Parents</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
